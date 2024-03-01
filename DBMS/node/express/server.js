@@ -36,7 +36,7 @@ app.use(express.json())
 
 // create database post table
 app.post("/create-table", (req, res) => {
-    const sql = "CREATE TABLE post(id int(11) NOT NULL, title varchar(250), decscription text(5000), image varchar(250))"
+    const sql = "CREATE TABLE post(id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, title varchar(250), decscription text(5000), image varchar(250))"
     connection.query(sql, (err, result) => {
         if(err) throw err
     })
